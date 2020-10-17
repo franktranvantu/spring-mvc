@@ -14,7 +14,7 @@
 <head>
     <title>Update Customer</title>
     <style>
-        h1 {
+        h1, div {
             text-align: center;
         }
         table {
@@ -27,6 +27,11 @@
 </head>
 <body>
     <h1>Update Customer</h1>
+    <div>
+        <a href="${contextPath}/get-customers">Show Customers</a>
+    </div>
+    <br />
+    <br />
     <form:form action="${contextPath}/update-customer/${customer.customerId}" modelAttribute="customer">
         <table>
             <tr>

@@ -14,7 +14,7 @@
 <head>
     <title>Create Customer</title>
     <style>
-        h1 {
+        h1, div {
             text-align: center;
         }
         table {
@@ -27,7 +27,9 @@
 </head>
 <body>
     <h1>Create New Customer</h1>
-    <a href="${contextPath}/get-customers">Show Customers</a>
+    <div>
+        <a href="${contextPath}/get-customers">Show Customers</a>
+    </div>
     <br />
     <br />
     <form:form action="${contextPath}/create-customer" modelAttribute="customer">

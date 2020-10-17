@@ -13,7 +13,7 @@
 <head>
     <title>Success</title>
     <style>
-        h1 {
+        h1, div {
             text-align: center;
         }
         table {
@@ -23,7 +23,9 @@
 </head>
 <body>
     <h1>${action} successful!</h1>
-    <a href="${contextPath}/create-customer-form">Create Customer</a> | <a href="${contextPath}/get-customers">Show Customers</a>
+    <div>
+        <a href="${contextPath}/create-customer-form">Create Customer</a> | <a href="${contextPath}/get-customers">Show Customers</a>
+    </div>
     <br />
     <br />
     <table>

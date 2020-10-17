@@ -13,6 +13,9 @@
 <head>
     <title>All Customers</title>
     <style>
+        h1, div {
+            text-align: center;
+        }
         table {
             border-collapse: collapse;
             margin: auto;
@@ -24,7 +27,9 @@
 </head>
 <body>
     <h1>All Customers</h1>
-    <a href="${contextPath}/create-customer-form">Create Customer</a>
+    <div>
+        <a href="${contextPath}/create-customer-form">Create Customer</a>
+    </div>
     <br />
     <br />
     <table>
