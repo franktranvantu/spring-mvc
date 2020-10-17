@@ -1,5 +1,8 @@
 package com.franktran.spring.dto;
 
+import org.apache.commons.lang3.StringUtils;
+
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -8,11 +11,15 @@ public class CustomerDto {
     private static final String DATE_FORMAT = "yyyy-MM-dd";
 
     private Long customerId;
+    @NotBlank
     private String firstName;
     private String lastName;
     private String birthDate;
+    @NotBlank
     private String phone;
+    @NotBlank
     private String address;
+    @NotBlank
     private String city;
     private String state;
     private Integer points;
@@ -21,7 +28,7 @@ public class CustomerDto {
     }
 
     public LocalDate getSubmissionBirthDateConverted() {
-        if (birthDate == null) {
+        if (StringUtils.isBlank(birthDate)) {
             return null;
         }
         return LocalDate.parse(birthDate);

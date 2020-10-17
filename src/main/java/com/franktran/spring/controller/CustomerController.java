@@ -7,9 +7,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,7 +40,10 @@ public class CustomerController {
     }
 
     @RequestMapping("create-customer")
-    public String createCustomer(CustomerDto customerDto, Model model) {
+    public String createCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "create-customer-form";
+        }
         Customer customer = convertToEntity(customerDto);
         Customer createdCustomer = customerService.createCustomer(customer);
         model.addAttribute("action", "Created");
@@ -53,8 +59,11 @@ public class CustomerController {
     }
 
     @RequestMapping("update-customer/{id}")
-    public String updateCustomer(@PathVariable Long id, CustomerDto customerDto, Model model) {
+    public String updateCustomer(@PathVariable Long id, @Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, Model model) {
         customerDto.setCustomerId(id);
+        if (bindingResult.hasErrors()) {
+            return "update-customer-form";
+        }
         Customer customer = convertToEntity(customerDto);
         Customer updatedCustomer = customerService.updateCustomer(customer);
         model.addAttribute("action", "Updated");

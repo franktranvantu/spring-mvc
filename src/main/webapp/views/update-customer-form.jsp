@@ -23,6 +23,9 @@
         .buttons {
             text-align: right;
         }
+        .error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -35,8 +38,9 @@
     <form:form action="${contextPath}/update-customer/${customer.customerId}" modelAttribute="customer">
         <table>
             <tr>
-                <td>First Name: </td>
+                <td>First Name<span class="error">*</span>: </td>
                 <td><form:input path="firstName" /></td>
+                <td><form:errors path="firstName" cssClass="error" /></td>
             </tr>
             <tr>
                 <td>Last Name: </td>
@@ -47,16 +51,19 @@
                 <td><form:input type="date" path="birthDate" /></td>
             </tr>
             <tr>
-                <td>Phone: </td>
+                <td>Phone<span class="error">*</span>: </td>
                 <td><form:input path="phone" /></td>
+                <td><form:errors path="phone" cssClass="error" /></td>
             </tr>
             <tr>
-                <td>Address: </td>
+                <td>Address<span class="error">*</span>: </td>
                 <td><form:input path="address" /></td>
+                <td><form:errors path="address" cssClass="error" /></td>
             </tr>
             <tr>
-                <td>City: </td>
+                <td>City<span class="error">*</span>: </td>
                 <td><form:input path="city" /></td>
+                <td><form:errors path="city" cssClass="error" /></td>
             </tr>
             <tr>
                 <td>State: </td>
