@@ -14,7 +14,7 @@
 <head>
     <title>Delete Customer</title>
     <style>
-        h1, p {
+        h1, .warning-message {
             text-align: center;
         }
         table {
@@ -23,7 +23,7 @@
         .buttons {
             text-align: right;
         }
-        p {
+        .warning-message {
             color: red;
             font-size: 20px;
         }
@@ -31,7 +31,7 @@
 </head>
 <body>
     <h1>Delete Customer</h1>
-    <p>Are you sure that you want to permanently delete the customer?</p>
+    <p class="warning-message">Are you sure that you want to permanently delete the customer?</p>
     <form:form action="${contextPath}/delete-customer/${customer.customerId}" modelAttribute="customer">
         <table>
             <tr>

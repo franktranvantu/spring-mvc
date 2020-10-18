@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="layout" template="/views/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/views/header.jsp" />
+        <put-attribute name="menu" value="/views/menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/views/footer.jsp" />
+    </definition>
+
+    <definition name="all-customers" extends="layout">
+        <put-attribute name="title" value="All Customers" />
+        <put-attribute name="body" value="/views/body/all-customers.jsp" />
+    </definition>
+
+    <definition name="create-customer-form" extends="layout">
+        <put-attribute name="title" value="Create Customer" />
+        <put-attribute name="body" value="/views/body/create-customer-form.jsp" />
+    </definition>
+
+    <definition name="update-customer-form" extends="layout">
+        <put-attribute name="title" value="Update Customer" />
+        <put-attribute name="body" value="/views/body/update-customer-form.jsp" />
+    </definition>
+
+    <definition name="delete-customer-confirm" extends="layout">
+        <put-attribute name="title" value="Delete Customer" />
+        <put-attribute name="body" value="/views/body/delete-customer-confirm.jsp" />
+    </definition>
+
+    <definition name="success" extends="layout">
+        <put-attribute name="title" value="Success" />
+        <put-attribute name="body" value="/views/body/success.jsp" />
+    </definition>
+</tiles-definitions>
