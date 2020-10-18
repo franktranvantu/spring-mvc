@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>All Customers</title>
+    <link rel="shortcut icon" href="">
     <style>
         h1, div {
             text-align: center;
