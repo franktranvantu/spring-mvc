@@ -7,35 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title><tiles:getAsString name="title" /></title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-        }
-        .header {
-            background-color: #7D98A1;
-        }
-        .middle {
-            display: flex;
-        }
-        .middle .menu {
-            flex-grow: 1;
-            background-color: #5E6572;
-        }
-        .middle .body {
-            flex-grow: 3;
-            background-color: #A9B4C2;
-        }
-        .footer {
-            background-color: #EEF1EF;
-        }
-        p {
-            text-align: center;
-        }
-    </style>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" />
 </head>
 <body>
     <div class="container">

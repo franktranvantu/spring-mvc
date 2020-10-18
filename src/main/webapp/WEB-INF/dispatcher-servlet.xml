@@ -13,4 +13,5 @@
     <context:component-scan base-package="com.franktran.spring" />
 
     <mvc:annotation-driven />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 </beans>

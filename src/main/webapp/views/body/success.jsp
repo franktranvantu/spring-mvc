@@ -12,14 +12,7 @@
 <html>
 <head>
     <title>Success</title>
-    <style>
-        h1, div {
-            text-align: center;
-        }
-        table {
-            margin: auto;
-        }
-    </style>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" />
 </head>
 <body>
     <h1>${action} successful!</h1>

@@ -25,7 +25,7 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @RequestMapping("get-customers")
+    @RequestMapping("/get-customers")
     public String getCustomers(Model model) {
         List<Customer> customers = customerService.getAllCustomers();
         List<CustomerDto> convertedCustomers = customers.stream().map(this::convertToDto).collect(Collectors.toList());
@@ -39,7 +39,7 @@ public class CustomerController {
         return "create-customer-form";
     }
 
-    @RequestMapping("create-customer")
+    @RequestMapping("/create-customer")
     public String createCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "create-customer-form";
@@ -58,7 +58,7 @@ public class CustomerController {
         return "update-customer-form";
     }
 
-    @RequestMapping("update-customer/{id}")
+    @RequestMapping("/update-customer/{id}")
     public String updateCustomer(@PathVariable Long id, @Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, Model model) {
         customerDto.setCustomerId(id);
         if (bindingResult.hasErrors()) {
@@ -78,7 +78,7 @@ public class CustomerController {
         return "delete-customer-confirm";
     }
 
-    @RequestMapping("delete-customer/{id}")
+    @RequestMapping("/delete-customer/{id}")
     public String deleteCustomer(@PathVariable Long id, String action, Model model) {
         if ("Delete".equals(action)) {
             Customer customer = customerService.getCustomerById(id);

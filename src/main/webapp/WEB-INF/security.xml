@@ -4,15 +4,31 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
                            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <beans:import resource="jdbc.xml" />
+
     <http auto-config="true">
-        <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
+        <access-denied-handler error-page="/views/403.jsp" />
+        <intercept-url pattern="/get-customers" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
+        <intercept-url pattern="/create-customer-form/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/create-customer/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/update-customer-form/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/update-customer/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/delete-customer-confirm/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/delete-customer/**" access="hasRole('ROLE_ADMIN')" />
     </http>
 
     <authentication-manager>
         <authentication-provider>
             <user-service>
                 <user name="admin" password="{noop}1234" authorities="ROLE_ADMIN" />
+                <user name="ty" password="{noop}1234" authorities="ROLE_USER" />
             </user-service>
+<!--            <jdbc-user-service-->
+<!--                    data-source-ref="basicDataSource"-->
+<!--                    users-by-username-query=""-->
+<!--                    authorities-by-username-query="">-->
+<!--            </jdbc-user-service>-->
         </authentication-provider>
     </authentication-manager>
 </beans:beans>

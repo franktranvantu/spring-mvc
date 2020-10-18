@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img.forbidden {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #7D98A1;
+}
+
+.middle {
+    display: flex;
+}
+
+.middle .menu {
+    flex-grow: 1;
+    background-color: #5E6572;
+}
+
+.middle .body {
+    flex-grow: 3;
+    background-color: #A9B4C2;
+}
+
+.footer {
+    background-color: #EEF1EF;
+}
+
+h1, div, p {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+table.all-customers, .all-customers th, .all-customers td {
+    border: 1px solid black;
+}
+
+.buttons {
+    text-align: right;
+}
+.error {
+    color: red;
+}
+
+.warning-message {
+    font-size: 20px;
+}

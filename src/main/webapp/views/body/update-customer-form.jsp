@@ -13,20 +13,7 @@
 <html>
 <head>
     <title>Update Customer</title>
-    <style>
-        h1, div {
-            text-align: center;
-        }
-        table {
-            margin: auto;
-        }
-        .buttons {
-            text-align: right;
-        }
-        .error {
-            color: red;
-        }
-    </style>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" />
 </head>
 <body>
     <h1>Update Customer</h1>

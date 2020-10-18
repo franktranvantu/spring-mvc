@@ -13,18 +13,7 @@
 <head>
     <title>All Customers</title>
     <link rel="shortcut icon" href="">
-    <style>
-        h1, div {
-            text-align: center;
-        }
-        table {
-            border-collapse: collapse;
-            margin: auto;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 </head>
 <body>
     <h1>All Customers</h1>
@@ -33,7 +22,7 @@
     </div>
     <br />
     <br />
-    <table>
+    <table class="all-customers">
         <tr>
             <th>Customer ID</th>
             <th>First Name</th>

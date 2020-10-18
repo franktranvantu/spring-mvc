@@ -13,25 +13,11 @@
 <html>
 <head>
     <title>Delete Customer</title>
-    <style>
-        h1, .warning-message {
-            text-align: center;
-        }
-        table {
-            margin: auto;
-        }
-        .buttons {
-            text-align: right;
-        }
-        .warning-message {
-            color: red;
-            font-size: 20px;
-        }
-    </style>
+    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" />
 </head>
 <body>
     <h1>Delete Customer</h1>
-    <p class="warning-message">Are you sure that you want to permanently delete the customer?</p>
+    <p class="error warning-message">Are you sure that you want to permanently delete the customer?</p>
     <form:form action="${contextPath}/delete-customer/${customer.customerId}" modelAttribute="customer">
         <table>
             <tr>
